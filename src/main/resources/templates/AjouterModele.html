@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>Ajouter Modele</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta   charset="UTF-8" />
+	
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">-->
+	
+	<link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />	
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+	<link href="../static/css/util.css" th:href="@{/css/util.css}" rel="stylesheet" />
+	
+<!--===============================================================================================-->
+</head>
+<body>
+
+  <div id='cssmenu'>
+  <ul>
+     <li><a href='/home'><span>Home</span></a></li>
+     <li class='active has-sub'><a href='#'><span>Affichage</span></a>  
+        <ul>
+           <li class='has-sub'><a href='/allGisements'><span>Guisements</span></a>
+              <ul>
+                 <li><a href='/bouzon'><span>Bouzon</span></a></li>
+                 <li class='last'><a href='/hzk2'><span>HzK2</span></a></li>
+              </ul>
+           </li>
+
+           <li class='has-sub'><a href='/allOuvriers'><span>Ouvriers</span></a>
+              <ul>
+                 <li><a href='/allHumains'><span>Humains</span></a></li>
+                 <li><a href='/allRobots'><span>Robots</span></a></li>
+                 <li class='last'><a href='/allModeles'><span>Modeles</span></a></li>
+              </ul>
+           </li>
+           
+           <li class='has-sub'><a href='/allEquipes'><span>Equipes</span></a>
+           </li>
+        </ul>
+     </li>
+    
+     <li class='active has-sub'><a href='#'><span>Ajout</span></a>  
+        <ul>
+           <li class='has-sub'><a href='#'><span>Guisements</span></a>
+              <ul>
+                 <li><a href='#'><span>Bouzon</span></a></li>
+                 <li class='last'><a href='#'><span>HzK2</span></a></li>
+              </ul>
+           </li>
+
+           <li class='has-sub'><a href='#'><span>Ouvriers</span></a>
+              <ul>
+                 <li><a href='#'><span>Humains</span></a></li>
+                 <li class='last'><a href='#'><span>Robots</span></a></li>
+                 <li class='last'><a href='/ajouterModele'><span>Modele de Robot</span></a></li>
+              </ul>
+           </li>
+        </ul>
+     </li>
+     
+  </ul>
+  </div>
+
+
+	<div class="bg-contact2" style="background-image: url('homejpg');">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<form class="contact2-form validate-form" action="#" th:action="@{/ajouterModele}" th:object="${modele}" method="post">
+					<span class="contact2-form-title">
+						Veuillez Ajouter les informations d'un Modele Robot
+					</span>
+
+					<div class="wrap-input2 validate-input" data-validate="Name is required">
+						<input class="input2" type="number" th:field="*{idModel}" />
+						<span class="focus-input2" data-placeholder="Code Ouvrier"></span>
+					</div>
+
+					<div class="wrap-input2 validate-input" data-validate="Name is required">
+						<input class="input2" type="date" th:field="*{conception}" >
+						<span class="focus-input2" data-placeholder="Date d'affectation"></span>
+					</div>
+
+					<div class="wrap-input2 validate-input" data-validate="Name is required">
+						<input class="input2" type="number" th:field="*{coutExplMensuel}" >
+						<span class="focus-input2" data-placeholder="Cout d'Exploitation Mensuel"></span>
+					</div>
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn" type="submit" value="Ajouter Modele">
+								SEND
+							</button>
+						</div>
+						<br>
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn" type="reset" value="Reset">
+								RESET
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+</body>
+</html>

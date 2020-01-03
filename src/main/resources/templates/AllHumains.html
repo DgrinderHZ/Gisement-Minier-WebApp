@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--===============================================================================================-->
+  <title>Humains</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!--===============================================================================================-->
+  
+  
+  <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />	
+  <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+  <link href="../static/css/util.css" th:href="@{/css/util.css}" rel="stylesheet" />
+  <link href="../static/css/stylet.css" th:href="@{/css/stylet.css}" rel="stylesheet" />
+  
+<!--===============================================================================================-->
+</head>
+<body>
+
+  <div id='cssmenu'>
+  <ul>
+     <li><a href='/home'><span>Home</span></a></li>
+     <li class='active has-sub'><a href='#'><span>Affichage</span></a>  
+        <ul>
+           <li class='has-sub'><a href='/allGisements'><span>Guisements</span></a>
+              <ul>
+                 <li><a href='/bouzon'><span>Bouzon</span></a></li>
+                 <li class='last'><a href='/hzk2'><span>HzK2</span></a></li>
+              </ul>
+           </li>
+
+           <li class='has-sub'><a href='/allOuvriers'><span>Ouvriers</span></a>
+              <ul>
+                 <li><a href='/allHumains'><span>Humains</span></a></li>
+                 <li><a href='/allRobots'><span>Robots</span></a></li>
+                 <li class='last'><a href='/allModeles'><span>Modeles</span></a></li>
+              </ul>
+           </li>
+           
+           <li class='has-sub'><a href='/allEquipes'><span>Equipes</span></a>
+           </li>
+        </ul>
+     </li>
+    
+     <li class='active has-sub'><a href='#'><span>Ajout</span></a>  
+        <ul>
+           <li class='has-sub'><a href='#'><span>Guisements</span></a>
+              <ul>
+                 <li><a href='#'><span>Bouzon</span></a></li>
+                 <li class='last'><a href='#'><span>HzK2</span></a></li>
+              </ul>
+           </li>
+
+           <li class='has-sub'><a href='#'><span>Ouvriers</span></a>
+              <ul>
+                 <li><a href='#'><span>Humains</span></a></li>
+                 <li class='last'><a href='#'><span>Robots</span></a></li>
+                 <li class='last'><a href='/ajouterModele'><span>Modele de Robot</span></a></li>
+              </ul>
+           </li>
+        </ul>
+     </li>
+     
+  </ul>
+  </div>
+
+  <div class="bg-contact2" style="background-image: url('images/humain.jpg');">
+    <div class="container-contact2">
+      <div class="wrap-contact2">
+
+          <span class="contact2-form-title" style="padding-bottom: 0px;">
+              Listes des Humains
+          </span>
+
+          <table class="responstable" >
+        
+            <tr>
+              <th data-th="Driver details"><span>Code Ouvrier</span>
+              </th>
+              <th><span>Nom</span>
+              </th>
+              <th><span>Date d'affectation</span>
+              </th>
+              <th><span>Salaire</span>
+              </th>
+              <th><span>Equipe</span>
+              </th>
+              <th><span>Coût</span>
+              </th>             
+            </tr>
+            
+            <tr th:each="humain: ${humains}">
+              <td th:text="${humain.getIdOuvrier()}"></td>
+              <td th:text="${humain.getNom()}"></td>
+              <td th:text="${humain.getDateAffectation()}"></td>
+              <td th:text="${humain.salaire}"></td>
+              <td th:text="${humain.getEquipe().getNomEquipe()}"></td>
+              <td th:text="${humain.calculerCoutOuvrier()}"></td>
+            </tr>
+            
+            
+            
+          </table>
+      </div>
+    </div>
+  </div>
+
+<!--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+
+</body>
+</html>

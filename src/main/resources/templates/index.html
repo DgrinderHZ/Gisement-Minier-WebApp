@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!--===============================================================================================-->
+  <title>Accueil</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!--===============================================================================================-->
+  
+  
+  <link href="../static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />	
+  <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+  <link href="../static/css/util.css" th:href="@{/css/util.css}" rel="stylesheet" />
+  <link href="../static/css/stylet.css" th:href="@{/css/stylet.css}" rel="stylesheet" />
+  
+<!--===============================================================================================-->
+</head>
+<body>
+
+  <div id='cssmenu'>
+  <ul>
+     <li><a href='/home'><span>Home</span></a></li>
+     <li class='active has-sub'><a href='#'><span>Affichage</span></a>  
+        <ul>
+           <li class='has-sub'><a href='/allGisements'><span>Guisements</span></a>
+              <ul>
+                 <li><a href='/bouzon'><span>Bouzon</span></a></li>
+                 <li class='last'><a href='/hzk2'><span>HzK2</span></a></li>
+              </ul>
+           </li>
+
+           <li class='has-sub'><a href='/allOuvriers'><span>Ouvriers</span></a>
+              <ul>
+                 <li><a href='/allHumains'><span>Humains</span></a></li>
+                 <li><a href='/allRobots'><span>Robots</span></a></li>
+                 <li class='last'><a href='/allModeles'><span>Modeles</span></a></li>
+              </ul>
+           </li>
+           
+           <li class='has-sub'><a href='/allEquipes'><span>Equipes</span></a>
+           </li>
+        </ul>
+     </li>
+    
+     <li class='active has-sub'><a href='#'><span>Ajout</span></a>  
+        <ul>
+           <li class='has-sub'><a href='#'><span>Guisements</span></a>
+              <ul>
+                 <li><a href='#'><span>Bouzon</span></a></li>
+                 <li class='last'><a href='#'><span>HzK2</span></a></li>
+              </ul>
+           </li>
+
+           <li class='has-sub'><a href='#'><span>Ouvriers</span></a>
+              <ul>
+                 <li><a href='#'><span>Humains</span></a></li>
+                 <li class='last'><a href='#'><span>Robots</span></a></li>
+                 <li class='last'><a href='/ajouterModele'><span>Modele de Robot</span></a></li>
+              </ul>
+           </li>
+        </ul>
+     </li>
+     
+  </ul>
+  </div>
+
+
+  <div class="bg-contact2" style="background-image: url('images/home.jpg');">
+    <div class="container-contact2">
+          <span class="contact2-form-title" style="color: #33ccff; padding-top: 20px;">
+            Application de gestion d'exploitation minière
+          </span>
+      <div class="wrap-contact2">
+
+          <span class="contact2-form-title">
+            Gestion des Gisments
+          </span>
+
+          <div class="container-contact2-form-btn">
+              <img src="images/bouzon.jpg" style="width: 200px; height: 200px; margin-right: 115px;">   
+              <img src="images/hzk2.jpg" style="width: 200px; height: 200px; margin-left: 80px;">
+          </div>
+
+          <div class="container-contact2-form-btn">
+            <div class="wrap-contact2-form-btn">
+              <div class="contact2-form-bgbtn"></div>
+              <button class="contact2-form-btn">
+                <a href="/hzk2" style="color: white">HzK2</a>
+              </button>
+            </div>
+            <div class="wrap-contact2-form-btn">
+              <div class="contact2-form-bgbtn"></div>
+              <button class="contact2-form-btn">
+                <a href="/bouzon" style="color: white">Bouzon</a>
+              </button>
+            </div>
+          </div>
+
+      </div>
+      <div class="wrap-contact2" style="margin-top: 40px;">
+
+          <span class="contact2-form-title">
+            Gestion des Ouvriers
+          </span>
+
+          <div class="container-contact2-form-btn">
+              <img src="images/h.jpg" style="width: 200px; height: 200px; margin-right: 115px;">   
+              <img src="images/robot.jpg" style="width: 200px; height: 200px; margin-left: 80px;">
+          </div>
+
+          <div class="container-contact2-form-btn">
+            <div class="wrap-contact2-form-btn">
+              <div class="contact2-form-bgbtn"></div>
+              <button class="contact2-form-btn"><img src="">
+                <a href="/allHumains" style="color: white">Humains</a>
+              </button>
+            </div>
+            <br>
+            <div class="wrap-contact2-form-btn">
+              <div class="contact2-form-bgbtn"></div>
+              <button class="contact2-form-btn">
+                <a href="/allRobots" style="color: white">Robots</a>
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+
+</body>
+</html>
